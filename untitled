@@ -1,0 +1,9 @@
+require 'rest_client'
+
+
+RestClient.post(
+  'https://AC0129a1c1ff32caaba9fb3caaa82294c7:5ff827d63d3ef3702e1058bd6664d93a@api.twilio.
+  com/2010-04-01/Accounts/AC0129a1c1ff32caaba9fb3caaa82294c7/Messages.json',
+  :Body => 'Hello World',
+  :From => '4159157645',
+  :to => '7073371418')

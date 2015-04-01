@@ -19,6 +19,7 @@ gem 'textacular', '~> 3.0'
 gem 'acts_as_votable'
 gem 'poltergeist'
 gem 'devise'
+gem 'rest-client'
 
 group :development, :test do
   gem 'byebug'
