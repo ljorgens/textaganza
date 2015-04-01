@@ -4,10 +4,12 @@
 
 
 <h2>Address Book</h2>
-<% @contacts.each do |contact| %>
-  <li><%= contact.name %>
-<%= contact.user_number %></li>
+<ul id="contacts">
+  <% @contacts.each do |contact| %>
+    <li>name: <%= contact.name %>, number: <%= contact.user_number %></li>
+  <% end %>
 
-<% end %>
+</ul>
+
 
 <%= render "contacts/form" %>

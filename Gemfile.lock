@@ -36,7 +36,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts_as_votable (0.10.0)
     addressable (2.3.7)
     arel (6.0.0)
     autoprefixer-rails (5.1.8)
@@ -76,6 +75,7 @@ GEM
     columnize (0.9.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -262,7 +262,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_votable
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.4)
   bootstrap_form
@@ -270,6 +269,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  database_cleaner
   devise
   dotenv-rails
   factory_girl_rails (~> 4.0)

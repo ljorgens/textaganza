@@ -16,7 +16,6 @@ gem 'paperclip'
 gem 'bootswatch-rails'
 gem "factory_girl_rails", "~> 4.0"
 gem 'textacular', '~> 3.0'
-gem 'acts_as_votable'
 gem 'poltergeist'
 gem 'devise'
 gem 'rest-client'
@@ -30,6 +29,7 @@ group :development, :test do
   gem "letter_opener"
   gem 'dotenv-rails'
   gem 'rspec-rails'
+  gem 'database_cleaner'
 end
 
 group :test do
