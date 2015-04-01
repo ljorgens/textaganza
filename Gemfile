@@ -28,11 +28,12 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'pry'
   gem "letter_opener"
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'capybara'
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'launchy'
   gem 'vcr'
