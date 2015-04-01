@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  devise_for :users
     root :to => 'home#index'
 
-    resources :users do
-      resources :messages
-    end
-    resources :messages
+    resources :messages, only: [:index, :show, :new, :create]
+    resources :contacts, except: [:index, :show]
 end

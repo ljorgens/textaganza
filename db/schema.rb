@@ -11,15 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401172903) do
+ActiveRecord::Schema.define(version: 20150401203240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contacts", force: :cascade do |t|
+    t.string  "name"
+    t.integer "user_number", limit: 8
+    t.integer "user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
-    t.string "to"
-    t.string "from"
-    t.string "body"
+    t.string  "to"
+    t.string  "from"
+    t.string  "body"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150401172903) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
