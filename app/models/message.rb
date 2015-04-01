@@ -1,9 +1,10 @@
 class Message < ActiveRecord::Base
-  before_create :send_sms
+  before_create :send_message
   belongs_to :user
   private
 
-  def send_sms
+  def send_message
+    begin
     response = RestClient::Request.new(
     :method => :post,
     :url => "https://api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",
@@ -11,7 +12,7 @@ class Message < ActiveRecord::Base
     :password => ENV['TWILIO_AUTH_TOKEN'],
     :payload => { :Body => body,
       :To => to,
-      :From => from }
+      :From => from, }
       ).execute
     rescue RestClient::BadRequest => error
       message = JSON.parse(error.response)['message']
@@ -19,3 +20,4 @@ class Message < ActiveRecord::Base
       false
     end
   end
+end
