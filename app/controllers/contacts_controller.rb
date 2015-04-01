@@ -6,7 +6,6 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      flash[:notice] = "Your contact was created!"
       redirect_to root_path
     else
       render 'new'
@@ -21,7 +20,7 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
   end
-  
+
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(contact_params)

@@ -1,3 +1,13 @@
 <h1>Welcome, Send a Message!</h1>
 
 <%= render "messages/form" %>
+
+
+<h2>Address Book</h2>
+<% @contacts.each do |contact| %>
+  <li><%= contact.name %>
+<%= contact.user_number %></li>
+
+<% end %>
+
+<%= render "contacts/form" %>
