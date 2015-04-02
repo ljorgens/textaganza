@@ -4,6 +4,7 @@ class Message < ActiveRecord::Base
   private
 
   def send_messages
+    valid = true
     to.split(", ").each do |to_number|
 
       begin
@@ -16,10 +17,12 @@ class Message < ActiveRecord::Base
           :To => to_number,
           :From => from, }
           ).execute
+
        rescue RestClient::BadRequest => error
         message = JSON.parse(error.response)['message']
         errors.add(:base, message)
-        false
+        valid = false
+        return valid
       end
     end
   end
