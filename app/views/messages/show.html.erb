@@ -6,15 +6,33 @@ Message:<br>
 
 <% if current_user %>
 
-<%= link_to "New Message", new_message_path %>
+  <%= link_to "New Message", new_message_path %>
 
 <% end %>
 
 
-<h1>Messages</h1>
 
-<ul class="list-unstyled">
-  <% @messages.each do |message| %>
-  <li> <%= link_to message.id, message_path(message) %> - <%= message.user.name %></li>
+<div class="row">
+  <% if current_user %>
+  <h2>Messages</h2>
+  <hr>
+  <% messages.each do |message| %>
+  <div class="col-md-3 message_well">
+    <div class="col-md-4">
+      <%= link_to message_path(message) do %>
+      <%= message.id %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <p class="message_body">
+        To: <%= message.to %> <br>
+        From: <%= message.from %><br>
+      </p>
+    </div>
+  </div>
   <% end %>
-</ul>
+  <% else %>
+    <h2>Login to begin sending messages.</h2>
+  <% end %>
+</div>
+<p><%= link_to "Return Home", root_path %></p>

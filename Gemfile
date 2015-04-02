@@ -19,6 +19,7 @@ gem 'textacular', '~> 3.0'
 gem 'poltergeist'
 gem 'devise'
 gem 'rest-client'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'byebug'

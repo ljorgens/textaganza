@@ -1,15 +1,9 @@
 <h1>Welcome, Send a Message!</h1>
 
 <%= render "messages/form" %>
-
-
-<h2>Address Book</h2>
-<ul id="contacts">
-  <% @contacts.each do |contact| %>
-    <li>name: <%= contact.name %>, number: <%= contact.user_number %></li>
-  <% end %>
-
-</ul>
-
-
-<%= render "contacts/form" %>
+<br>
+<br>
+<% if current_user %>
+<%= link_to "Address Book", contacts_path%>
+<hr>
+<% end %>
