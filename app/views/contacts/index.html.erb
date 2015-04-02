@@ -3,9 +3,22 @@
 
 
 <ul id="contacts">
-  <%= render @contacts.order(name: :asc) %>
-
+    <% @contacts.each do |contact| %>
+  <li><%= contact.name %>, <%= contact.user_number %>
+  </li>
+  <% end %>
 </ul>
 <p><%= link_to "Add Contact", new_contact_path %></p>
 
 <p><%= link_to "Return Home", root_path %></p>
+Contacts To Send To
+<ul id = "balls">
+<li></li>
+</ul>
+
+<script>
+$('#contacts li').click(function(){
+  $(this).appendTo('#balls');
+});
+
+</script>
