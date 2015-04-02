@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @message.to = params[:to]
   end
 
   def show

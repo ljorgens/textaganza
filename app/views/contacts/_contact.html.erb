@@ -1,1 +1,4 @@
-<li>Name: <%= contact.name %>, Number: <%= contact.user_number %></li>
+<li>
+  <%= contact.name %> |
+  <%= link_to contact.user_number, new_message_path(to: contact.user_number) %>
+</li>

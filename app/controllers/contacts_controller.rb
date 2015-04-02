@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
     @contacts = Contact.all
   end
 
-    def new
+  def new
     @contact = Contact.new
   end
 
@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to contacts_path }
         format.js
       end
     else
@@ -22,10 +22,6 @@ class ContactsController < ApplicationController
   def edit
     @contact = Contact.find(params[:id])
     render :edit
-  end
-
-  def show
-    @contact = Contact.find(params[:id])
   end
 
   def update
