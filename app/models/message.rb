@@ -5,6 +5,7 @@ class Message < ActiveRecord::Base
 
   def send_messages
     to.split(", ").each do |to_number|
+
       begin
         response = RestClient::Request.new(
         :method => :post,
@@ -15,7 +16,7 @@ class Message < ActiveRecord::Base
           :To => to_number,
           :From => from, }
           ).execute
-      rescue RestClient::BadRequest => error
+       rescue RestClient::BadRequest => error
         message = JSON.parse(error.response)['message']
         errors.add(:base, message)
         false

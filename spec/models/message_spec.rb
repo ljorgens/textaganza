@@ -5,7 +5,7 @@ describe Message, :vcr => true do
 
   it "doesn't save the message if twilio gives an error" do
     message = Message.new(:body => 'hi', :to => '11', :from => '4159157590')
-    expect(message.save).to be_falsey
+    expect(message.save).to be false
   end
 
   it 'adds an error if the to number is invalid' do

@@ -26,7 +26,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 01 Apr 2015 22:46:45 GMT
+      - Thu, 02 Apr 2015 22:56:03 GMT
       X-Powered-By:
       - AT-5000
       X-Shenanigans:
@@ -41,5 +41,5 @@ http_interactions:
         number.", "more_info": "https://www.twilio.com/docs/errors/21211", "status":
         400}'
     http_version: 
-  recorded_at: Wed, 01 Apr 2015 22:46:45 GMT
+  recorded_at: Thu, 02 Apr 2015 22:56:03 GMT
 recorded_with: VCR 2.9.3
