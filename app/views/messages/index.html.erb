@@ -6,10 +6,15 @@
 
 
 <h1>Messages</h1>
-
-<ul class="list-unstyled">
-  <% @messages.each do |message| %>
-  <li> <%= link_to message.to, message_path(message) %> </li>
-  <% end %>
-</ul>
+<div class="col-md-12">
+  <div class="row">
+    <ul class="list-unstyled">
+      <% @messages.each do |message| %>
+        <li> 
+          <%= link_to message.to, message_path(message) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 <p><%= link_to "Return Home", root_path %></p>

@@ -12,10 +12,11 @@ Message:<br>
 
 
 
-<div class="row">
+
   <% if current_user %>
   <h2>Messages</h2>
   <hr>
+  
   <% @messages.each do |message| %>
   <div class="col-md-3 message_well">
     <div class="col-md-4">

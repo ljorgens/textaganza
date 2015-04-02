@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
   def index
     @messages = Message.all
+    @contacts = Contact.all
   end
 
   def new
@@ -20,6 +21,7 @@ class MessagesController < ApplicationController
       flash[:notice] = "Message Sent Sucessfully!!"
       redirect_to messages_path
     else
+      flash[:alert] = "something went wrong!"
       render :new
     end
   end

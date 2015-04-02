@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
     if @contact.save
     redirect_to contacts_path
     else
+      flash[:alert] = "Disaster strikes"
       render :new
     end
   end
@@ -28,6 +29,7 @@ class ContactsController < ApplicationController
       flash[:notice] = "Contact edited!"
       redirect_to root_path
     else
+      flash[:notice] = "Worst Idea Ever"
       render :edit
     end
   end
