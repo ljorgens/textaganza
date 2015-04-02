@@ -7,6 +7,9 @@ describe "the creating contact process" do
   end
 
   it "allows a user to create a contact", js: true do
+    visit "/"
+    click_on "Address Book"
+    click_on "Add Contact"
     fill_in "Name", :with => "Bill"
     fill_in "User number", :with => "123456789"
     click_on "New Contact"

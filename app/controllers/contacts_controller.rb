@@ -10,12 +10,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      respond_to do |format|
-        format.html { redirect_to contacts_path }
-        format.js
-      end
+    redirect_to contacts_path
     else
-      render 'home/index'
+      render :new
     end
   end
 

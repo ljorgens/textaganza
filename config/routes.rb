@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     root :to => 'home#index'
 
     resources :messages, only: [:index, :show, :new, :create]
-    resources :contacts
+    resources :contacts, only: [:index, :new, :create]
 end
