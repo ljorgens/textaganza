@@ -11,13 +11,14 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+    @messages = Message.all
   end
 
   def create
     @message = Message.new(message_params)
     if @message.save
       flash[:notice] = "Message Sent Sucessfully!!"
-      redirect_to message_path(@message)
+      redirect_to messages_path
     else
       render :new
     end

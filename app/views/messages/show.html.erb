@@ -16,7 +16,7 @@ Message:<br>
   <% if current_user %>
   <h2>Messages</h2>
   <hr>
-  <% messages.each do |message| %>
+  <% @messages.each do |message| %>
   <div class="col-md-3 message_well">
     <div class="col-md-4">
       <%= link_to message_path(message) do %>
@@ -27,6 +27,7 @@ Message:<br>
       <p class="message_body">
         To: <%= message.to %> <br>
         From: <%= message.from %><br>
+        Body: <%= message.body %><br>
       </p>
     </div>
   </div>
